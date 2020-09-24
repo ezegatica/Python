@@ -18,3 +18,4 @@ if (a == 2 and b == 3.4):
 while (a <= 5):
     print("El valor de a es: " + str(a))
     a = a + 1
+ 
