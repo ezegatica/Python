@@ -6,7 +6,6 @@ from Adafruit_IO import Client, Feed
 ADAFRUIT_IO_KEY =       
 ADAFRUIT_IO_USERNAME =  
 api_key =               
-base_url =              
 
 def obtenerTemperatura(ciudad):
     import requests
@@ -18,6 +17,7 @@ def obtenerTemperatura(ciudad):
 
     if(respuestaHTTP.status_code == 200):  # codigo 200 es que fue exitoso
         respuestaJson = respuestaHTTP.json()
+        base_url = 'http://api.openweathermap.org/data/2.5/weather?'
 
         # Adentro de main están todos los datos de temperatura, presión, etc. Entonces se guarda en una variable para poder acceder a esos datos
         y = respuestaJson["main"]
