@@ -10,6 +10,7 @@ api_key =
 def obtenerTemperatura(ciudad):
     import requests
     import json
+    base_url = 'http://api.openweathermap.org/data/2.5/weather?'
 
     
     complete_url = base_url + "appid=" + api_key + "&q=" + ciudad
@@ -17,7 +18,6 @@ def obtenerTemperatura(ciudad):
 
     if(respuestaHTTP.status_code == 200):  # codigo 200 es que fue exitoso
         respuestaJson = respuestaHTTP.json()
-        base_url = 'http://api.openweathermap.org/data/2.5/weather?'
 
         # Adentro de main están todos los datos de temperatura, presión, etc. Entonces se guarda en una variable para poder acceder a esos datos
         y = respuestaJson["main"]
